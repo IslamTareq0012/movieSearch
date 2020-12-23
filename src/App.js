@@ -14,11 +14,11 @@ class App extends React.Component {
   }
   getResult = async (e) => {
     const movie = e.target.elements.movieName.value;
-    const type = e.target.elements.searchType.value;
+ //   const type = e.target.elements.searchType.value;
     if(movie !== "" || movie){
       e.preventDefault();
 
-      if(type ==="Movies"){
+ //     if(type ==="Movies"){
 
         const api_call = await  fetch(`https://api.themoviedb.org/3/search/movie?api_key=dda7bf64cfed94e09e52b4a001586421&language=en-US&page=1&include_adult=false&query=${encodeURI(movie)}`);
      
@@ -28,16 +28,18 @@ class App extends React.Component {
           results: data.results
          });      
         
-        }else if(type ==="TV_Shows")
-        {
-          const api_call = await  fetch(`https://api.themoviedb.org/3/search/tv?api_key=dda7bf64cfed94e09e52b4a001586421&language=en-US&page=1&include_adult=false&query=${encodeURI(movie)}`);
+ //       }
+        
+        // else if(type ==="TV_Shows")
+        // {
+        //   const api_call = await  fetch(`https://api.themoviedb.org/3/search/tv?api_key=dda7bf64cfed94e09e52b4a001586421&language=en-US&page=1&include_adult=false&query=${encodeURI(movie)}`);
      
-          const data = await api_call.json();
+        //   const data = await api_call.json();
      
-          this.setState({ 
-            results: data.results
-           });   
-        }
+        //   this.setState({ 
+        //     results: data.results
+        //    });   
+        // }
     }
 
     
